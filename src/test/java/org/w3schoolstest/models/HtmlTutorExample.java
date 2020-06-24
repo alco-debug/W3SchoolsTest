@@ -2,7 +2,7 @@ package org.w3schoolstest.models;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.w3schoolstest.helpers.WebDriverProvider;
+import org.w3schoolstest.helpers.GlobalWebDriverProvider;
 
 import static org.w3schoolstest.helpers.W3SchoolsTestHelpers.getElementByXPath;
 
@@ -13,7 +13,7 @@ public class HtmlTutorExample {
 
     public HtmlTutorExample(String xpathSelector) {
         this.xpathSelector = xpathSelector;
-        this.driver = WebDriverProvider.getDriver();
+        this.driver = GlobalWebDriverProvider.getDriver();
     }
 
     public String getFirstString() {

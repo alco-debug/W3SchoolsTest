@@ -15,7 +15,7 @@ public class W3SchoolsTestHelpers {
 
     @Nullable
     public static WebElement getElementByXPath(@NotNull String xpathSelector) throws InterruptedException {
-        WebDriver driver = WebDriverProvider.getDriver();
+        WebDriver driver = GlobalWebDriverProvider.getDriver();
         List<WebElement> elems = driver.findElements(By.xpath(xpathSelector));
         for(int i = 0; i < numberOfTries; i++) {
             if(!elems.isEmpty())

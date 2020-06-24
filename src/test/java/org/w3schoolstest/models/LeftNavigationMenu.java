@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.w3schoolstest.data.W3SchoolsTestData;
-import org.w3schoolstest.helpers.WebDriverProvider;
+import org.w3schoolstest.helpers.GlobalWebDriverProvider;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class LeftNavigationMenu {
     private WebDriver driver;
 
     public LeftNavigationMenu() {
-        this.driver = WebDriverProvider.getDriver();
+        this.driver = GlobalWebDriverProvider.getDriver();
         leftMenuLinks = driver.findElements(By.xpath("//a[@target=\"_top\"]"));
     }
 

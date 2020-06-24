@@ -1,7 +1,7 @@
 package org.w3schoolstest.models;
 
 import org.openqa.selenium.WebDriver;
-import org.w3schoolstest.helpers.WebDriverProvider;
+import org.w3schoolstest.helpers.GlobalWebDriverProvider;
 
 public class HtmlTutorStepPage {
 
@@ -12,7 +12,7 @@ public class HtmlTutorStepPage {
 
     public HtmlTutorStepPage(PageMetaInfo pageInfo) {
         this.pageInfo = pageInfo;
-        this.driver = WebDriverProvider.getDriver();
+        this.driver = GlobalWebDriverProvider.getDriver();
         this.driver.get(pageInfo.getURL());
         leftMenu = new LeftNavigationMenu();
         htmlExample = new HtmlTutorExample(pageInfo.getHtmlExampleXPathSelector());

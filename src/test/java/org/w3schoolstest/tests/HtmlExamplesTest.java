@@ -5,8 +5,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.w3schoolstest.data.W3SchoolsTestData;
-import org.w3schoolstest.helpers.WebDriverProvider;
+import org.w3schoolstest.helpers.GlobalWebDriverProvider;
 import org.w3schoolstest.models.HtmlTutorStepPage;
+import org.w3schoolstest.helpers.GlobalWebDriverProvider.Mode;
 
 import static org.testng.Assert.assertTrue;
 
@@ -19,6 +20,7 @@ public class HtmlExamplesTest {
 
     @BeforeClass
     public static void getLinkNames() {
+        GlobalWebDriverProvider.setMode(Mode.Remote);
         linkNames = W3SchoolsTestData.getPageLinkCaptions();
         currentPageNumber = 0;
         currentPage = new HtmlTutorStepPage(
@@ -39,7 +41,7 @@ public class HtmlExamplesTest {
     @AfterClass
     public static void closeBrowser()
     {
-        WebDriverProvider.closeDriver();
+        GlobalWebDriverProvider.closeDriver();
     }
 
 
